@@ -123,10 +123,10 @@ masterDataN<-merge(masterDataN, stimID, by=c('timeStamp','stimParam'), all=TRUE)
 # merging data to genotype
 #geno<-c('wt','wt','het','het','het','het','wt','wt','het','het')
 #sID<-unique(masterDataNew1$sID)
-sIDgeno<-data.table(geno,sID)
 sIDgeno<-fread('Animals.csv')
 sIDgeno$sID<-as.character(sIDgeno$sID)
 masterDataN<-merge(masterDataN, sIDgeno, by='sID')
 
+t2<-merge(t2,sIDgeno, by='sID')
 # write master file in the working directory
 fwrite(masterDataN, 'NereaMASTERupdated.csv')
