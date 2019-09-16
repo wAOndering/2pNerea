@@ -1,5 +1,5 @@
 # provide the directory location of the folder of interest
-dir<-"Z:/Nerea/2 photon imaging/new baselines/MatLab analysis 2nd cohort" ; for (i in dir) { setwd(i)
+dir<-"Z:/Nerea/2 photon imaging/SynapticActivityneuropilTest1XROI-Cre-Rum2-GcaMP6/" ; for (i in dir) { setwd(i)
   setwd(i)}
 
 dir(dir)
@@ -39,12 +39,13 @@ fileOutput<-function(dataInput, stimParamVal, sessionVal, genoVal, whiskStimImag
 masterData<-fread('NereaMasterupdated.csv')
 
 fileOutput(dataInput=masterData, # name of data set to work with
-           sessionVal=c('b1','b2','r1','r2'), #c('b1','b2','p1','p2','r1','r2')
+           sessionVal=c('b1','b2','p1','p2'), #c('b1','b2','p1','p2','r1','r2')
            stimParamVal=c('ten'), #c('ten','five','spont')
            genoVal=c('wt','het'), #c('wt','het')
            whiskStimImageVal =c('identical'), # c('identical','different')
            #RefStimNOTtoinclude=c('stim01','stim02') #stim not to inclue eg.stim1 
-           timeFromRefStimVal=seq(20,30,1) # first 2 digits correspond to the interval of interest post-stim
+           timeFromRefStimVal=seq(0,10,1) # first 2 digits correspond to the interval of interest post-stim
 ) 
 
 
+masterData<-fread('Z:/Nerea/2 photon imaging/SynapticActivityneuropilTest1XROI-Cre-Rum2-GcaMP6/NereaMASTERupdated.csv')
