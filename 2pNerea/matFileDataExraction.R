@@ -33,7 +33,7 @@ areaComb[, c("file") := sub("_001-area.csv",'',file)]
 areaComb[, c("stimParam", "depth") := tstrsplit(file, "(?<=[A-Za-z])(?=[0-9])", perl=TRUE)]
 areaComb[whiskStim==whiskImage, c('whiskStimImageType'):='identical']
 areaComb[!whiskStim==whiskImage, c('whiskStimImageType'):='different']
-areaComb$segId<-areaComb$segId+1
+areaComb=areaComb[areaComb$segId != 0, ]
 areaComb<-rename(areaComb, c(segId='rowName'))
 areaComb<-areaComb[,c('rowName', 'areaPx', 'sID', 'whiskStim', 'whiskImage', 'depth', 'whiskStimImageType')]
 areaComb$rowName<-as.character(areaComb$rowName)
@@ -123,7 +123,6 @@ masterDataN<-merge(masterDataN, stimID, by=c('timeStamp','stimParam'), all=TRUE)
 # merging data to genotype
 #geno<-c('wt','wt','het','het','het','het','wt','wt','het','het')
 #sID<-unique(masterDataNew1$sID)
-sIDgeno<-data.table(geno,sID)
 sIDgeno<-fread('Animals.csv')
 sIDgeno$sID<-as.character(sIDgeno$sID)
 masterDataN<-merge(masterDataN, sIDgeno, by='sID')
