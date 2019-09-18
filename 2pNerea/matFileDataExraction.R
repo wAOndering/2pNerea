@@ -124,7 +124,7 @@ masterDataN<-merge(masterDataN, stimID, by=c('timeStamp','stimParam'), all=TRUE)
 #geno<-c('wt','wt','het','het','het','het','wt','wt','het','het')
 #sID<-unique(masterDataNew1$sID)
 sIDgeno<-fread('Animals.csv')
-sIDgeno$sID<-as.character(sIDgeno$sID)
+masterDataN$sID<-as.numeric(masterDataN$sID)
 masterDataN<-merge(masterDataN, sIDgeno, by='sID')
 
 # write master file in the working directory
