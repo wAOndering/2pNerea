@@ -15,8 +15,8 @@ This script enable the generation of subset of ROI outside of pre-determined are
 [link](https://github.com/wAOndering/2pNerea/tree/master/roiSegmentation)
 
 <img src="roiSegmentation/example.png">
-_**figure** Examples of various out put that can be obtained by modifying the script in the [segmentation section] (https://github.com/wAOndering/2pNerea/tree/master/roiSegmentation)._
 
+_**figure** Examples of various out put that can be obtained by modifying the script in the [segmentation section](https://github.com/wAOndering/2pNerea/tree/master/roiSegmentation)_.
 
 #### Script to perform batch analysis
 Add the level up matfile scripts that enable to batch the analysis with fluoroSNNAP
